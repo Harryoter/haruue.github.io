@@ -38,7 +38,7 @@ Jul 29 2015 posted in html strlib2: 基于TI- &hellip;">
 		if ($(window).height()>$(window).width()) {
 			$("html").css("background-image","none")
 		} else {
-			$("footer").one("mouseover", function(){
+			$("footer").one("click", function(){
 				$("#after_footer_div").show();
 				$("html,body").stop(true).animate({scrollTop:$("#after_footer_scroll_down_target").offset().top}, 3000);
 			});
