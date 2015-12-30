@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html | 春上冰月的博客]]></title>
+  <link href="http://haruue.github.io/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://haruue.github.io/"/>
+  <updated>2015-12-30T16:20:18+00:00</updated>
+  <id>http://haruue.github.io/</id>
+  <author>
+    <name><![CDATA[春上冰月]]></name>
+    <email><![CDATA[haruue@caoyue.com.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[我要让我的 Email 像 Octopress 一样漂亮]]></title>
+    <link href="http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/"/>
+    <updated>2015-07-29T03:27:26+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang</id>
+    <content type="html"><![CDATA[<p>自定义信纸，让 Email 像 Octopress 一样！<br />
+<br />
+这个想法在我的脑子里一闪而过，<del>但是就像马云说的，梦想还是要有的，如果实现了呢？</del><br />
+<br />
+那就来实现一下吧！<br /></p>
+
+<!--more-->
+
+
+<p><br />
+首先，把 Octopress 的主页抠出来。。。<br />
+删掉所有脚本、博客内容，把背景之类的简化一下，在尾注上加上 Email 专用版标志。。。<br />
+然后最终我们就得到了这样一个丑陋东西。。。<br />
+<img src="http://haruue.github.io/images/blog/20150729/blog-email01.jpg" width=533 high=287 /><br />
+<del>然后把这些HTML代码复制到邮件里去就可以了！</del><br />
+然而现实永远没有那么简单，绝对不要高估 Email 对 HTML 代码的支持能力！<br />
+<br />
+那怎么办，似乎还是要用图片来解决了。。。<br />
+<br />
+把这个方框截成图片，把脚注分开截（这样要延长的话就会方便一些），再把空白的地方截下来，延长时比较方便，就像这样<br />
+（当时一脑残截成了三个部分，后来一想确实不应该这样）<br />
+<img src="http://haruue.github.io/images/email/email-head.jpg" width=520 high=25 /><br />
+<img src="http://haruue.github.io/images/email/email-main.jpg" width=520 high=205 /><br />
+<img src="http://haruue.github.io/images/email/email-foot.jpg" width=520 high=27 /><br />
+最后还有一张方便随时延长：<br />
+<img src="http://haruue.github.io/images/email/email-add.jpg" width=520 high=62 /><br />
+<br />
+然后，到QQ邮箱里，打开写信模式，把图片上的链接用&#60;map&#62;标签加上去，然后加上各种样式(简写样式自动展开好评)，另外还得一步一步地查看效果以保证样式不会被服务器吞掉。<br />
+最后，代码变成了这个样子：（QQ邮箱把所有标签都弄成大写简直差评！）<br />
+<figure class='code'><figcaption><span>Octopress Special Edition for Email</p></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='HTML'><span class='line'><span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;PADDING-BOTTOM: 50px; PADDING-TOP: 20px; PADDING-LEFT: 20px; LEFT: 0px; TOP: 0px; PADDING-RIGHT: 100px; BACKGROUND-COLOR: #262c33&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-head.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -4px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-main.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">795,41,983,214</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=t9TW2M7C0vfU1tjOwtKZ1NjamdTZ&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">765,345,915,365</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://sighttp.qq.com/authd?IDKEY=5b5a3f4dc7bf41522c3f7fa176667e2036fd9ce5e235bdd0&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">767,379,866,395</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;WIDTH: 650px; POSITION: absolute; LEFT: 50px; Z-INDEX: 2; TOP: -5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; FONT-WEIGHT: bold&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                收件人：
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; POSITION: relative; TOP: 5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                正文
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;POSITION: relative; FONT-WEIGHT: bold; TEXT-ALIGN: right; TOP: 10px&quot;</span> <span class="na">align=</span><span class="s">right</span><span class="nt">&gt;</span>
+</span><span class='line'>                发件人
+</span><span class='line'>                <span class="nt">&lt;BR&gt;</span>
+</span><span class='line'>                ****年**月**日
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -8px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-foot.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#footer</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">footer</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">165,20,216,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-[%3F]-yang-piao-liang/index.html&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">226,20,367,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://octopress.org&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">493,20,554,35</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'><span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+这是中国特色版的，以后还会有其他语言版本的应该。<br />
+最终效果在 QQ邮箱 和 网易邮箱表现还不错（当然要开显示图片）。。。<br />
+<del>（除了加载慢出翔以外）</del><br />
+<img src="http://haruue.github.io/images/blog/20150729/blog-email02.jpg" width=600 high=283 /><br />
+美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
+另外，对手机的支持也是一个问题。。。<br />
+<br />
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#104;&#x61;&#114;&#x75;&#x75;&#101;&#x40;&#99;&#97;&#x6f;&#121;&#x75;&#x65;&#46;&#99;&#x6f;&#109;&#46;&#x63;&#x6e;">&#104;&#x61;&#114;&#x75;&#x75;&#101;&#x40;&#99;&#97;&#x6f;&#121;&#117;&#x65;&#46;&#x63;&#111;&#109;&#46;&#x63;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
+]]></content>
+  </entry>
+  
+</feed>

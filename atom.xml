@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[春上冰月的博客]]></title>
+  <link href="http://haruue.github.io/atom.xml" rel="self"/>
+  <link href="http://haruue.github.io/"/>
+  <updated>2015-12-30T16:20:18+00:00</updated>
+  <id>http://haruue.github.io/</id>
+  <author>
+    <name><![CDATA[春上冰月]]></name>
+    <email><![CDATA[haruue@caoyue.com.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Coolpad 5261 的 root 与刷机方法]]></title>
+    <link href="http://haruue.github.io/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/"/>
+    <updated>2015-09-17T06:31:28+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa</id>
+    <content type="html"><![CDATA[<p>其实这篇文章没有什么技术含量的。。。用的工具、文件什么的差不多都是现成的。。。<br />
+写这篇文章的纯粹目的，只是因为网上几乎没有这部手机相关的东西，放一个作为一个备忘，顺便为以后破解国产机提供一种思路。<br />
+<br />
+首先说一下这部机子的来历：我们学校的电信宽带是办宽带赠(kun)送(bang)手机的，由于本来有手机就选了个最便宜的，于是就拿到了这部“连官网上都找不到的机子”<br /></p>
+
+<div>
+<img src="http://haruue.github.io/images/blog/20150917/001.jpg" style="height: 40%; width: 40%; float: left ;" />
+<img src="http://haruue.github.io/images/blog/20150917/002.jpg" style="height: 40%; width: 40%; float: left ;" />
+</div>
+
+
+<p><div style="clear: both; " />
+<br />
+到手的时候真是有一种“用之无味，弃之可惜”的感觉了。本来办宽带的学长说可以少35元回收掉，但是想想当时说的<del>豪言壮志</del>“这种机子就是拿来耍的”，那就还是耍一耍吧！<br />
+<!--more-->
+<br />
+配置的话 512 MB RAM ，CPU 是高通的 MSM8909<del>（这是什么鬼？）</del>，系统是 Android 4.4 ，df 命令显示有 775MB 的 /system 分区以及 248M 的 /cache 分区 ，另外这货的 /data 分区和内置存储卡是共用空间的（虽然只有 1.6GB ），令人惊讶是这货居然支持 zram 和 swap 。。。<br />
+<br />
+好吧，废话+吐槽到此结束。。。<br />
+<br />
+首先，这部机子虽说在学校稍微普遍一点（电信赠(kun)送(bang)的影响），但在网上几乎找不到，还好有位好心人上传了个 <a target="_blank" href="http://pan.baidu.com/s/1mgMoxSG">5261售后专用线刷救砖包.zip</a> ，用 MiFlash 就可以给这部手机刷机了<del>（怎么又和小米扯上关系了）</del>。<br />
+<br />
+不管怎么样，先刷了再说。。。<br />
+<br />
+按照它提供的方法，装好驱动（Windows 8 需要关闭驱动强制签名）和 MiFlash ，把 5261售后专用线刷救砖包.zip/酷派进Qdload模式用MIFLASHTOOL刷.zip/酷派进Qdload模式/ 下面的 #dload#.d 和 !dload!.l 拷贝到 SD 卡，插拔一次电池，将手机连接电脑，打开MiFlash，点几下[刷新]，然后选择那个有刷机文件的文件夹，点击[刷机]就开刷了。。。<br />
+<br />
+刷好之后，拔下 SD 卡，长按电源键就可以开机，话说第一次开机确实挺久的。。。<br />
+<br />
+一进系统，发现系统果然变了不少，以前只有企鹅管家，现在居然上了大数字全家桶，看来那些国厂为了我国国民信息安全真是费(shang)尽(xin)心(bing)机(kuang)！！！<br />
+<br />
+不过倒是终于找到了一种能改系统的方法，<del>那就好办多了</del>。<br />
+<br />
+本来的想法是先把刷机包里的 system_1.img 到 system_7.img 合并一下，到 Linux 下面挂载，耍好之后重新拆开，然后看看能不能刷上去，结果并好的包在 Linux 上死活不能挂载，虽然 file 命令显示它就是一个正常的，可以挂载的 img 。<br />
+<br />
+那就另寻捷径了，上网一搜发现了一款叫 <a target="_blank" href="http://www.romzhushou.com/">ROM助手</a> 的软件，说是能直接修改 img 文件，虽说看里面的功能有点内置程序赚钱的感觉，但是能抓到耗子的猫就是好猫吧，拿来试试再说。<br />
+<br />
+ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编辑功能编辑一下合并好的 img ，把所有多余的内置删掉，然后再把 SuperSU 相关的文件全部放进去，再重新拆开。。。这些步骤都很简单，这里就不多说了<del>（我说了这篇文章一点技术含量都没有的）</del>。<br />
+<br />
+然后就用分解好的 img 文件以及输出的 rawprogram_unsparse.xml 把之前刷机文件夹里的文件覆盖掉，再用 MiFlash 刷一次机。开机，root 就已经搞定了！<br />
+<br />
+另外发现这货在 fastboot 模式下面进行 fastboot flash 的时候是不做检查的，能做什么就不知道了，或许以后可以编译个 recovery 放进去吧，这样刷机过程可能就正常一些了。。。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我要让我的 Email 像 Octopress 一样漂亮]]></title>
+    <link href="http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/"/>
+    <updated>2015-07-29T03:27:26+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang</id>
+    <content type="html"><![CDATA[<p>自定义信纸，让 Email 像 Octopress 一样！<br />
+<br />
+这个想法在我的脑子里一闪而过，<del>但是就像马云说的，梦想还是要有的，如果实现了呢？</del><br />
+<br />
+那就来实现一下吧！<br /></p>
+
+<!--more-->
+
+
+<p><br />
+首先，把 Octopress 的主页抠出来。。。<br />
+删掉所有脚本、博客内容，把背景之类的简化一下，在尾注上加上 Email 专用版标志。。。<br />
+然后最终我们就得到了这样一个丑陋东西。。。<br />
+<img src="http://haruue.github.io/images/blog/20150729/blog-email01.jpg" width=533 high=287 /><br />
+<del>然后把这些HTML代码复制到邮件里去就可以了！</del><br />
+然而现实永远没有那么简单，绝对不要高估 Email 对 HTML 代码的支持能力！<br />
+<br />
+那怎么办，似乎还是要用图片来解决了。。。<br />
+<br />
+把这个方框截成图片，把脚注分开截（这样要延长的话就会方便一些），再把空白的地方截下来，延长时比较方便，就像这样<br />
+（当时一脑残截成了三个部分，后来一想确实不应该这样）<br />
+<img src="http://haruue.github.io/images/email/email-head.jpg" width=520 high=25 /><br />
+<img src="http://haruue.github.io/images/email/email-main.jpg" width=520 high=205 /><br />
+<img src="http://haruue.github.io/images/email/email-foot.jpg" width=520 high=27 /><br />
+最后还有一张方便随时延长：<br />
+<img src="http://haruue.github.io/images/email/email-add.jpg" width=520 high=62 /><br />
+<br />
+然后，到QQ邮箱里，打开写信模式，把图片上的链接用&#60;map&#62;标签加上去，然后加上各种样式(简写样式自动展开好评)，另外还得一步一步地查看效果以保证样式不会被服务器吞掉。<br />
+最后，代码变成了这个样子：（QQ邮箱把所有标签都弄成大写简直差评！）<br /></p>
+
+<figure class='code'><figcaption><span>Octopress Special Edition for Email</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='HTML'><span class='line'><span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;PADDING-BOTTOM: 50px; PADDING-TOP: 20px; PADDING-LEFT: 20px; LEFT: 0px; TOP: 0px; PADDING-RIGHT: 100px; BACKGROUND-COLOR: #262c33&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-head.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -4px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-main.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">795,41,983,214</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=t9TW2M7C0vfU1tjOwtKZ1NjamdTZ&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">765,345,915,365</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://sighttp.qq.com/authd?IDKEY=5b5a3f4dc7bf41522c3f7fa176667e2036fd9ce5e235bdd0&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">767,379,866,395</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;WIDTH: 650px; POSITION: absolute; LEFT: 50px; Z-INDEX: 2; TOP: -5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; FONT-WEIGHT: bold&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                收件人：
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; POSITION: relative; TOP: 5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                正文
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;POSITION: relative; FONT-WEIGHT: bold; TEXT-ALIGN: right; TOP: 10px&quot;</span> <span class="na">align=</span><span class="s">right</span><span class="nt">&gt;</span>
+</span><span class='line'>                发件人
+</span><span class='line'>                <span class="nt">&lt;BR&gt;</span>
+</span><span class='line'>                ****年**月**日
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -8px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-foot.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#footer</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">footer</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">165,20,216,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-[%3F]-yang-piao-liang/index.html&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">226,20,367,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://octopress.org&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">493,20,554,35</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'><span class="nt">&lt;/DIV&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这是中国特色版的，以后还会有其他语言版本的应该。<br />
+最终效果在 QQ邮箱 和 网易邮箱表现还不错（当然要开显示图片）。。。<br />
+<del>（除了加载慢出翔以外）</del><br />
+<img src="http://haruue.github.io/images/blog/20150729/blog-email02.jpg" width=600 high=283 /><br />
+美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
+另外，对手机的支持也是一个问题。。。<br />
+<br />
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#x61;&#114;&#x75;&#x75;&#x65;&#64;&#99;&#97;&#111;&#x79;&#x75;&#101;&#x2e;&#99;&#x6f;&#x6d;&#46;&#99;&#110;">&#104;&#97;&#114;&#117;&#x75;&#101;&#64;&#99;&#x61;&#111;&#121;&#117;&#x65;&#x2e;&#99;&#111;&#x6d;&#46;&#x63;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[strlib2: 基于TI-BASIC的字符串函数库]]></title>
+    <link href="http://haruue.github.io/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/"/>
+    <updated>2015-07-16T04:30:25+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku</id>
+    <content type="html"><![CDATA[<p>为了打发暑假时间，<del>顺便唤醒一下一年没动过的编程思维</del>，在TI-Nspire上写了个字符串库啊。。。<br />
+本来是想做一个TI-Nspire上的线性输入程序，结果发现要用到很多这种函数，于是就干脆写了个lib，至于线性输入。。。那就再(qi)说(keng)吧！<br />
+想来想去就想到了18个函数，涵盖一般的增加,删除,分开,组合,计数&hellip;以及为表达式字符串<del>专门设计</del>的括号检查,空格检查<del>（虽然都很坑）</del><br />
+为什么叫 strlib2 呢？因为貌似以前有个大神 Eagle-man 写过一个 strlib 了，<del>我这种业余的自然只能屈居 strlib2 了啊啊啊</del>。。。<br />
+这个项目已经放到github上了，<a href=https://github.com/haruue/strlib2.tns.git>欢迎到项目主页看看吧</a><del>（什么？这卵东西还配上github？）</del></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://haruue.github.io/blog/2015/06/30/hello-world/"/>
+    <updated>2015-06-30T04:14:54+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/06/30/hello-world</id>
+    <content type="html"><![CDATA[<p>Hello World!<br />
+此乃开博第一文也！<br />
+折腾了一整天，终于在 Openshift 上（<del>本来就不是让你放在这里的</del>）开了这个 Octopress 。人家本来说的就是“A blogging framework for hackers”，看来自己距离 hacker 的那种级别还有相当遥远的距离。<br />
+忙活了一整年，在不得消停的压力中熬完高三，在艰险与激情中搞定高考，然后就是在忐忑不安中知晓成绩，挑选专业和大学。。。<br />
+终于，我获得了大约 2 个月的时间可以做自己想做的事，研究自己喜欢的东西。<br />
+似乎，忽然间就自由了呢。。。<br />
+规划了一年多的计划终于可以付诸行动，这个 Blog ，当然也是其中之一。<br />
+未来又会是怎么样的？可能答案就会出现在以后的文字中吧！<br />
+最后感谢<span style=" font-weight:bold;"><a href="http://www.uiharu.pw/">初春静流</a></span>，正是他美丽的花园 ，把我吸引到了 Octopress 这片神奇的土地。<br />
+<span style=" font-weight:bold;">
+春上冰月<br />
+2015.6.30
+</span></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>我要让我的 Email 像 Octopress 一样漂亮 - 春上冰月的博客</title>
+  <meta name="author" content="春上冰月">
+
+  
+  <meta name="description" content="自定义信纸，让 Email 像 Octopress 一样！ 这个想法在我的脑子里一闪而过，但是就像马云说的，梦想还是要有的，如果实现了呢？ 那就来实现一下吧！ 首先，把 Octopress 的主页抠出来。。。
+删掉所有脚本、博客内容，把背景之类的简化一下，在尾注上加上 Email 专用版标志 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang">
+  <link href="/blog/favicon.png" rel="icon">
+  <link href="/blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/blog/atom.xml" rel="alternate" title="春上冰月的博客" type="application/atom+xml">
+  <script src="/blog/javascripts/modernizr-2.0.js"></script>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/blog/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--Fonts from Google is change to 360 cdn for Chinese User -->
+<link href="http://fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.useso.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ($(window).height()>$(window).width()) {
+			$("html").css("background-image","none")
+		} else {
+			$("footer").one("mouseover", function(){
+				$("#after_footer_div").show();
+				$("html,body").stop(true).animate({scrollTop:$("#after_footer_scroll_down_target").offset().top}, 3000);
+			});
+		}
+	});
+</script>
+  <!-- disable google analytics to improve speed -->
+  <!-- 
+ -->
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/blog/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="haruue@caoyue.com.cn" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="https://www.baidu.com/s" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:haruue.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/blog/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">我要让我的 Email 像 Octopress 一样漂亮</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-29T03:27:26+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>自定义信纸，让 Email 像 Octopress 一样！<br />
+<br />
+这个想法在我的脑子里一闪而过，<del>但是就像马云说的，梦想还是要有的，如果实现了呢？</del><br />
+<br />
+那就来实现一下吧！<br /></p>
+
+<!--more-->
+
+
+<p><br />
+首先，把 Octopress 的主页抠出来。。。<br />
+删掉所有脚本、博客内容，把背景之类的简化一下，在尾注上加上 Email 专用版标志。。。<br />
+然后最终我们就得到了这样一个丑陋东西。。。<br />
+<img src="/blog/images/blog/20150729/blog-email01.jpg" width=533 high=287 /><br />
+<del>然后把这些HTML代码复制到邮件里去就可以了！</del><br />
+然而现实永远没有那么简单，绝对不要高估 Email 对 HTML 代码的支持能力！<br />
+<br />
+那怎么办，似乎还是要用图片来解决了。。。<br />
+<br />
+把这个方框截成图片，把脚注分开截（这样要延长的话就会方便一些），再把空白的地方截下来，延长时比较方便，就像这样<br />
+（当时一脑残截成了三个部分，后来一想确实不应该这样）<br />
+<img src="/blog/images/email/email-head.jpg" width=520 high=25 /><br />
+<img src="/blog/images/email/email-main.jpg" width=520 high=205 /><br />
+<img src="/blog/images/email/email-foot.jpg" width=520 high=27 /><br />
+最后还有一张方便随时延长：<br />
+<img src="/blog/images/email/email-add.jpg" width=520 high=62 /><br />
+<br />
+然后，到QQ邮箱里，打开写信模式，把图片上的链接用&#60;map&#62;标签加上去，然后加上各种样式(简写样式自动展开好评)，另外还得一步一步地查看效果以保证样式不会被服务器吞掉。<br />
+最后，代码变成了这个样子：（QQ邮箱把所有标签都弄成大写简直差评！）<br /></p>
+
+<figure class='code'><figcaption><span>Octopress Special Edition for Email</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='HTML'><span class='line'><span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;PADDING-BOTTOM: 50px; PADDING-TOP: 20px; PADDING-LEFT: 20px; LEFT: 0px; TOP: 0px; PADDING-RIGHT: 100px; BACKGROUND-COLOR: #262c33&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-head.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: 0px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -4px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-main.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">sidebar</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">795,41,983,214</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=t9TW2M7C0vfU1tjOwtKZ1NjamdTZ&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">765,345,915,365</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://sighttp.qq.com/authd?IDKEY=5b5a3f4dc7bf41522c3f7fa176667e2036fd9ce5e235bdd0&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">767,379,866,395</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;DIV</span> <span class="na">style=</span><span class="s">&quot;WIDTH: 650px; POSITION: absolute; LEFT: 50px; Z-INDEX: 2; TOP: -5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; FONT-WEIGHT: bold&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                收件人：
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;FONT-FAMILY: sans-serif; POSITION: relative; TOP: 5px&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                正文
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;P</span> <span class="na">style=</span><span class="s">&quot;POSITION: relative; FONT-WEIGHT: bold; TEXT-ALIGN: right; TOP: 10px&quot;</span> <span class="na">align=</span><span class="s">right</span><span class="nt">&gt;</span>
+</span><span class='line'>                发件人
+</span><span class='line'>                <span class="nt">&lt;BR&gt;</span>
+</span><span class='line'>                ****年**月**日
+</span><span class='line'>            <span class="nt">&lt;/P&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/DIV&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;IMG</span> <span class="na">style=</span><span class="s">&quot;BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; POSITION: relative; OUTLINE-STYLE: none; BORDER-LEFT: 0px; TOP: -8px&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.caoyue.com.cn/images/email/email-foot.jpg&quot;</span> <span class="na">useMap=</span><span class="s">#footer</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;MAP</span> <span class="na">name=</span><span class="s">footer</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">165,20,216,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-[%3F]-yang-piao-liang/index.html&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">226,20,367,35</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;AREA</span> <span class="na">href=</span><span class="s">&quot;http://octopress.org&quot;</span> <span class="na">target=</span><span class="s">_blank</span> <span class="na">coords=</span><span class="s">493,20,554,35</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/MAP&gt;</span>
+</span><span class='line'><span class="nt">&lt;/DIV&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这是中国特色版的，以后还会有其他语言版本的应该。<br />
+最终效果在 QQ邮箱 和 网易邮箱表现还不错（当然要开显示图片）。。。<br />
+<del>（除了加载慢出翔以外）</del><br />
+<img src="/blog/images/blog/20150729/blog-email02.jpg" width=600 high=283 /><br />
+美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
+另外，对手机的支持也是一个问题。。。<br />
+<br />
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#x61;&#114;&#x75;&#x75;&#x65;&#64;&#99;&#97;&#111;&#x79;&#x75;&#101;&#x2e;&#99;&#x6f;&#x6d;&#46;&#99;&#110;">&#104;&#97;&#114;&#117;&#x75;&#101;&#64;&#99;&#x61;&#111;&#121;&#117;&#x65;&#x2e;&#99;&#111;&#x6d;&#46;&#x63;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">春上冰月</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-29T03:27:26+01:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/blog/categories/html/'>html</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/" title="Previous Post: strlib2: 基于TI-BASIC的字符串函数库">&laquo; strlib2: 基于TI-BASIC的字符串函数库</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/" title="Next Post: Coolpad 5261 的 root 与刷机方法">Coolpad 5261 的 root 与刷机方法 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="我要让我的 Email 像 Octopress 一样漂亮"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"haruue"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END --></div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="http://haruue.github.io" alt="Home"><img src="/blog/images/Home.png"></a>
+      <a href="http://haruue.github.io/archives/" alt="Archives"><img src="/blog/images/Calendar.png"></a>
+      <a href="mailto:haruue@caoyue.com.cn" alt="E-Mail"><img src="/blog/images/Envelope.png"></a>
+      <a href="http://haruue.github.io/atom.xml" alt="subscribe feed"><img src="/blog/images/rss_big.png"></a>
+      </li>
+  </ul>
+</section>
+<section>
+  <h1>About Me</h1>
+  <br />
+  <div class="text" style=" text-align:center; font-weight:bold;">
+  	 <img src="/blog/images/haruue120x120.png" /><br />
+  	 <br />
+      春上冰月 | Haruue Icymoon<br />
+     <br />
+  </div>
+       拥有一点点异能力， <br />
+       却总是幻想着自己在特定波长条件下就能拥有绝对能力的春上
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/">Coolpad 5261 的 Root 与刷机方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/">我要让我的 Email 像 Octopress 一样漂亮</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/">Strlib2: 基于TI-BASIC的字符串函数库</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/blog/2015/06/30/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/haruue">@haruue</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'haruue',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/blog/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Links</h1>
+  <ul>
+  	<li>
+  		<a href=/downloads/index.html target="_blank">资源&下载</a>
+  	</li>
+  	<li>
+  		<a href="http://tieba.baidu.com/f?kw=fx-es(ms)" target="_blank">百度fx-es(ms)吧</a>
+  	</li>
+  	<li>
+  		<a href="http://www.haruakira.xyz" target="_blank">晴明教育グループ株式会社</a>
+  	</li>
+  </ul>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - 春上冰月 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+<div id="after_footer_div" style="min-height: 40px; background-color: transparent; border-width: 0px; display: none;"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+<div id="after_footer_scroll_down_target" style="height: 0px; background-color: transparent; border-width: 0px;"></div>
+
+</body>
+</html>

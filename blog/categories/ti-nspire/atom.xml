@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ti-nspire | 春上冰月的博客]]></title>
+  <link href="http://haruue.github.io/blog/categories/ti-nspire/atom.xml" rel="self"/>
+  <link href="http://haruue.github.io/"/>
+  <updated>2015-12-30T16:20:18+00:00</updated>
+  <id>http://haruue.github.io/</id>
+  <author>
+    <name><![CDATA[春上冰月]]></name>
+    <email><![CDATA[haruue@caoyue.com.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[strlib2: 基于TI-BASIC的字符串函数库]]></title>
+    <link href="http://haruue.github.io/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/"/>
+    <updated>2015-07-16T04:30:25+01:00</updated>
+    <id>http://haruue.github.io/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku</id>
+    <content type="html"><![CDATA[<p>为了打发暑假时间，<del>顺便唤醒一下一年没动过的编程思维</del>，在TI-Nspire上写了个字符串库啊。。。<br />
+本来是想做一个TI-Nspire上的线性输入程序，结果发现要用到很多这种函数，于是就干脆写了个lib，至于线性输入。。。那就再(qi)说(keng)吧！<br />
+想来想去就想到了18个函数，涵盖一般的增加,删除,分开,组合,计数&hellip;以及为表达式字符串<del>专门设计</del>的括号检查,空格检查<del>（虽然都很坑）</del><br />
+为什么叫 strlib2 呢？因为貌似以前有个大神 Eagle-man 写过一个 strlib 了，<del>我这种业余的自然只能屈居 strlib2 了啊啊啊</del>。。。<br />
+这个项目已经放到github上了，<a href=https://github.com/haruue/strlib2.tns.git>欢迎到项目主页看看吧</a><del>（什么？这卵东西还配上github？）</del></p>
+]]></content>
+  </entry>
+  
+</feed>
