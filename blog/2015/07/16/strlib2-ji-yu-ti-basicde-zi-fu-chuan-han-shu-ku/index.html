@@ -38,7 +38,7 @@
 		if ($(window).height()>$(window).width()) {
 			$("html").css("background-image","none")
 		} else {
-			$("footer").one("click", function(){
+			$("#copyright_footer").one("mouseover", function(){
 				$("#after_footer_div").show();
 				$("html,body").stop(true).animate({scrollTop:$("#after_footer_scroll_down_target").offset().top}, 3000);
 			});
@@ -95,7 +95,7 @@
 
 
 
- ordinal
+ Jul %o,2015
         
       </p>
     
@@ -126,7 +126,7 @@
 
 
 
- ordinal
+ Jul %o,2015
       
 
 <span class="categories">
@@ -276,7 +276,7 @@
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
+  <footer role="contentinfo" id="copyright_footer"><p>
   Copyright &copy; 2015 - 春上冰月 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
