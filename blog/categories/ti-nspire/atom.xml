@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ti-nspire | 春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/blog/categories/ti-nspire/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2015-12-31T02:17:23+00:00</updated>
+  <updated>2015-12-31T13:18:47+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[strlib2: 基于TI-BASIC的字符串函数库]]></title>
     <link href="http://www.caoyue.com.cn/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/"/>
-    <updated>2015-07-16T04:30:25+01:00</updated>
+    <updated>2015-07-16T11:30:25+08:00</updated>
     <id>http://www.caoyue.com.cn/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku</id>
     <content type="html"><![CDATA[<p>为了打发暑假时间，<del>顺便唤醒一下一年没动过的编程思维</del>，在TI-Nspire上写了个字符串库啊。。。<br />
 本来是想做一个TI-Nspire上的线性输入程序，结果发现要用到很多这种函数，于是就干脆写了个lib，至于线性输入。。。那就再(qi)说(keng)吧！<br />

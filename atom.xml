@@ -4,7 +4,7 @@
   <title><![CDATA[春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2015-12-31T02:17:23+00:00</updated>
+  <updated>2015-12-31T13:18:47+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Coolpad 5261 的 root 与刷机方法]]></title>
     <link href="http://www.caoyue.com.cn/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/"/>
-    <updated>2015-09-17T06:31:28+01:00</updated>
+    <updated>2015-09-17T13:31:28+08:00</updated>
     <id>http://www.caoyue.com.cn/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa</id>
     <content type="html"><![CDATA[<p>其实这篇文章没有什么技术含量的。。。用的工具、文件什么的差不多都是现成的。。。<br />
 写这篇文章的纯粹目的，只是因为网上几乎没有这部手机相关的东西，放一个作为一个备忘，顺便为以后破解国产机提供一种思路。<br />
@@ -65,7 +65,7 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
   <entry>
     <title type="html"><![CDATA[我要让我的 Email 像 Octopress 一样漂亮]]></title>
     <link href="http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/"/>
-    <updated>2015-07-29T03:27:26+01:00</updated>
+    <updated>2015-07-29T10:27:26+08:00</updated>
     <id>http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang</id>
     <content type="html"><![CDATA[<p>自定义信纸，让 Email 像 Octopress 一样！<br />
 <br />
@@ -167,14 +167,14 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
 美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
 另外，对手机的支持也是一个问题。。。<br />
 <br />
-如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#104;&#x61;&#114;&#117;&#x75;&#101;&#x40;&#99;&#x61;&#x6f;&#121;&#x75;&#x65;&#x2e;&#99;&#x6f;&#109;&#x2e;&#99;&#x6e;">&#x68;&#97;&#x72;&#117;&#x75;&#101;&#x40;&#99;&#x61;&#111;&#x79;&#117;&#x65;&#46;&#x63;&#x6f;&#x6d;&#x2e;&#x63;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x61;&#114;&#x75;&#x75;&#101;&#x40;&#x63;&#97;&#x6f;&#x79;&#x75;&#101;&#46;&#x63;&#111;&#109;&#x2e;&#x63;&#110;">&#x68;&#97;&#x72;&#x75;&#117;&#x65;&#x40;&#99;&#97;&#x6f;&#121;&#117;&#x65;&#x2e;&#99;&#x6f;&#x6d;&#x2e;&#x63;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[strlib2: 基于TI-BASIC的字符串函数库]]></title>
     <link href="http://www.caoyue.com.cn/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/"/>
-    <updated>2015-07-16T04:30:25+01:00</updated>
+    <updated>2015-07-16T11:30:25+08:00</updated>
     <id>http://www.caoyue.com.cn/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku</id>
     <content type="html"><![CDATA[<p>为了打发暑假时间，<del>顺便唤醒一下一年没动过的编程思维</del>，在TI-Nspire上写了个字符串库啊。。。<br />
 本来是想做一个TI-Nspire上的线性输入程序，结果发现要用到很多这种函数，于是就干脆写了个lib，至于线性输入。。。那就再(qi)说(keng)吧！<br />
@@ -187,7 +187,7 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
     <link href="http://www.caoyue.com.cn/blog/2015/06/30/hello-world/"/>
-    <updated>2015-06-30T04:14:54+01:00</updated>
+    <updated>2015-06-30T11:14:54+08:00</updated>
     <id>http://www.caoyue.com.cn/blog/2015/06/30/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World!<br />
 此乃开博第一文也！<br />
