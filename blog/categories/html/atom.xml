@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: html | 春上冰月的博客]]></title>
-  <link href="http://haruue.github.io/blog/categories/html/atom.xml" rel="self"/>
-  <link href="http://haruue.github.io/"/>
-  <updated>2015-12-30T17:33:02+00:00</updated>
-  <id>http://haruue.github.io/</id>
+  <link href="http://www.caoyue.com.cn/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://www.caoyue.com.cn/"/>
+  <updated>2015-12-31T02:17:23+00:00</updated>
+  <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
     <email><![CDATA[haruue@caoyue.com.cn]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[我要让我的 Email 像 Octopress 一样漂亮]]></title>
-    <link href="http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/"/>
+    <link href="http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/"/>
     <updated>2015-07-29T03:27:26+01:00</updated>
-    <id>http://haruue.github.io/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang</id>
+    <id>http://www.caoyue.com.cn/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang</id>
     <content type="html"><![CDATA[<p>自定义信纸，让 Email 像 Octopress 一样！<br />
 <br />
 这个想法在我的脑子里一闪而过，<del>但是就像马云说的，梦想还是要有的，如果实现了呢？</del><br />
@@ -31,7 +31,7 @@
 首先，把 Octopress 的主页抠出来。。。<br />
 删掉所有脚本、博客内容，把背景之类的简化一下，在尾注上加上 Email 专用版标志。。。<br />
 然后最终我们就得到了这样一个丑陋东西。。。<br />
-<img src="http://haruue.github.io/images/blog/20150729/blog-email01.jpg" width=533 high=287 /><br />
+<img src="http://www.caoyue.com.cn/images/blog/20150729/blog-email01.jpg" width=533 high=287 /><br />
 <del>然后把这些HTML代码复制到邮件里去就可以了！</del><br />
 然而现实永远没有那么简单，绝对不要高估 Email 对 HTML 代码的支持能力！<br />
 <br />
@@ -39,11 +39,11 @@
 <br />
 把这个方框截成图片，把脚注分开截（这样要延长的话就会方便一些），再把空白的地方截下来，延长时比较方便，就像这样<br />
 （当时一脑残截成了三个部分，后来一想确实不应该这样）<br />
-<img src="http://haruue.github.io/images/email/email-head.jpg" width=520 high=25 /><br />
-<img src="http://haruue.github.io/images/email/email-main.jpg" width=520 high=205 /><br />
-<img src="http://haruue.github.io/images/email/email-foot.jpg" width=520 high=27 /><br />
+<img src="http://www.caoyue.com.cn/images/email/email-head.jpg" width=520 high=25 /><br />
+<img src="http://www.caoyue.com.cn/images/email/email-main.jpg" width=520 high=205 /><br />
+<img src="http://www.caoyue.com.cn/images/email/email-foot.jpg" width=520 high=27 /><br />
 最后还有一张方便随时延长：<br />
-<img src="http://haruue.github.io/images/email/email-add.jpg" width=520 high=62 /><br />
+<img src="http://www.caoyue.com.cn/images/email/email-add.jpg" width=520 high=62 /><br />
 <br />
 然后，到QQ邮箱里，打开写信模式，把图片上的链接用&#60;map&#62;标签加上去，然后加上各种样式(简写样式自动展开好评)，另外还得一步一步地查看效果以保证样式不会被服务器吞掉。<br />
 最后，代码变成了这个样子：（QQ邮箱把所有标签都弄成大写简直差评！）<br />
@@ -117,11 +117,11 @@
 这是中国特色版的，以后还会有其他语言版本的应该。<br />
 最终效果在 QQ邮箱 和 网易邮箱表现还不错（当然要开显示图片）。。。<br />
 <del>（除了加载慢出翔以外）</del><br />
-<img src="http://haruue.github.io/images/blog/20150729/blog-email02.jpg" width=600 high=283 /><br />
+<img src="http://www.caoyue.com.cn/images/blog/20150729/blog-email02.jpg" width=600 high=283 /><br />
 美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
 另外，对手机的支持也是一个问题。。。<br />
 <br />
-如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#104;&#x61;&#x72;&#x75;&#x75;&#101;&#x40;&#x63;&#97;&#x6f;&#x79;&#117;&#x65;&#x2e;&#99;&#111;&#x6d;&#46;&#99;&#x6e;">&#x68;&#x61;&#114;&#117;&#117;&#x65;&#64;&#x63;&#97;&#111;&#121;&#117;&#101;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;&#x63;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x68;&#x61;&#114;&#x75;&#117;&#101;&#64;&#x63;&#97;&#x6f;&#121;&#117;&#x65;&#46;&#x63;&#x6f;&#x6d;&#x2e;&#99;&#110;">&#104;&#x61;&#114;&#117;&#117;&#x65;&#64;&#99;&#x61;&#111;&#x79;&#117;&#101;&#x2e;&#x63;&#111;&#x6d;&#x2e;&#x63;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
 ]]></content>
   </entry>
   

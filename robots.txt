@@ -3,4 +3,4 @@ Disallow: /downloads/
 Disallow: /images/
 Disallow: /baidu_verify_W16YX1sSGK.html
 
-Sitemap: http://haruue.github.io/sitemap.xml 
+Sitemap: http://www.caoyue.com.cn/sitemap.xml 

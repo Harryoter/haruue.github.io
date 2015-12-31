@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: android | 春上冰月的博客]]></title>
-  <link href="http://haruue.github.io/blog/categories/android/atom.xml" rel="self"/>
-  <link href="http://haruue.github.io/"/>
-  <updated>2015-12-30T17:33:02+00:00</updated>
-  <id>http://haruue.github.io/</id>
+  <link href="http://www.caoyue.com.cn/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://www.caoyue.com.cn/"/>
+  <updated>2015-12-31T02:17:23+00:00</updated>
+  <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
     <email><![CDATA[haruue@caoyue.com.cn]]></email>
@@ -15,17 +15,17 @@
   
   <entry>
     <title type="html"><![CDATA[Coolpad 5261 的 root 与刷机方法]]></title>
-    <link href="http://haruue.github.io/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/"/>
+    <link href="http://www.caoyue.com.cn/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/"/>
     <updated>2015-09-17T06:31:28+01:00</updated>
-    <id>http://haruue.github.io/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa</id>
+    <id>http://www.caoyue.com.cn/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa</id>
     <content type="html"><![CDATA[<p>其实这篇文章没有什么技术含量的。。。用的工具、文件什么的差不多都是现成的。。。<br />
 写这篇文章的纯粹目的，只是因为网上几乎没有这部手机相关的东西，放一个作为一个备忘，顺便为以后破解国产机提供一种思路。<br />
 <br />
 首先说一下这部机子的来历：我们学校的电信宽带是办宽带赠(kun)送(bang)手机的，由于本来有手机就选了个最便宜的，于是就拿到了这部“连官网上都找不到的机子”<br /></p>
 
 <div>
-<img src="http://haruue.github.io/images/blog/20150917/001.jpg" style="height: 40%; width: 40%; float: left ;" />
-<img src="http://haruue.github.io/images/blog/20150917/002.jpg" style="height: 40%; width: 40%; float: left ;" />
+<img src="http://www.caoyue.com.cn/images/blog/20150917/001.jpg" style="height: 40%; width: 40%; float: left ;" />
+<img src="http://www.caoyue.com.cn/images/blog/20150917/002.jpg" style="height: 40%; width: 40%; float: left ;" />
 </div>
 
 
