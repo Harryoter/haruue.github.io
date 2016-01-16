@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nspire | 春上冰月的博客]]></title>
+  <link href="http://www.caoyue.com.cn/blog/categories/nspire/atom.xml" rel="self"/>
+  <link href="http://www.caoyue.com.cn/"/>
+  <updated>2016-01-16T21:43:14+08:00</updated>
+  <id>http://www.caoyue.com.cn/</id>
+  <author>
+    <name><![CDATA[春上冰月]]></name>
+    <email><![CDATA[haruue@caoyue.com.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在 TI-Nspire CX-C CAS 上直接安装字典方法的研究]]></title>
+    <link href="http://www.caoyue.com.cn/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way/"/>
+    <updated>2016-01-16T02:31:28+08:00</updated>
+    <id>http://www.caoyue.com.cn/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way</id>
+    <content type="html"><![CDATA[<p>最近有人发现，将 TI-Nspire CX CAS 升级到 OS 4.0.3.29 之后出现了无法安装字典的问题，我在 firebird 上使用字典安装程序，然后发现这实际上是防降级机制的问题。  <br/>
+因为 OS 4.0 实际上有两个版本，官网上直接下载到的是 OS 4.0.3.29 ，而教师软件里自带的是 OS 4.0.0.235 。而教师软件自带了一个版本号是 4.0.0.500 的 ZiDian.tcc ，因此在 4.0.3.29 上直接安装这个 ZiDian.tcc 会触发防降级机制，并不会被安装。  <br/>
+我在 firebird 里安装了一个 OS 4.0.0.235 ，然后在里面安装了字典，然后我发现安装过程中会有这样的输出。</p>
+
+<!--more-->
+
+
+<pre><code>TI_OS_INSTALL_VERIFYING_IMAGE incremental update (91)
+TI_OS_INSTALL_VERIFYING_IMAGE incremental update (93)
+TI_OS_INSTALL_VERIFYING_RESOURCE (95)
+TI_OS_INSTALL_VERIFICATION_COMPLETE (99)
+OS_EXT: Start Install (4.0.0.500)...
+TI_OS_deleteTree(): path /extension/dict_zh_CN 
+TI_OS_deleteTree(): Failed to chdir : 2
+Unpacking data...
+Creating directory extension 
+Creating directory extension/dict_zh_CN 
+Inflating file extension/dict_zh_CN/cidian.db 
+TI_OS_INSTALL_INSTALLING_RESOURCES incremental update (64)
+Inflating file extension/dict_zh_CN/cidian.tre 
+TI_OS_INSTALL_INSTALLING_RESOURCES incremental update (71)
+Extracting file extension/dict_zh_CN/manifest.cer 
+Extracting file extension/dict_zh_CN/manifest.sig 
+Inflating file extension/dict_zh_CN/manifest.txt 
+Inflating file extension/dict_zh_CN/yinghan.db 
+TI_OS_INSTALL_INSTALLING_RESOURCES incremental update (89)
+Inflating file extension/dict_zh_CN/yinghan.tre 
+TI_OS_INSTALL_INSTALLING_IMAGE incremental update (93)
+Finished unpacking.
+OS_EXT: Install Complete(0x0000).
+</code></pre>
+
+<p>原来字典安装字典的主要过程就是解压+复制+验证的过程，如果把 ZiDian.tcc 以 zip 解压，我们会得到一个 os_ext.img 再解压它，得到的恰好就是这些文件，那就简单了。把这些文件直接复制到对应文件夹里试试。  <br/>
+于是我写了个简单的 Ndless 程序<del>（好吧其实是拿以前写的复制文件代码随便改改出来的）</del>，来完成这个复制操作  <br/>
+```</p>
+
+<h1>include &lt;libndls.h></h1>
+
+<p>extern &ldquo;C&rdquo; {
+    #include &lt;nspireio/nspireio.h>
+}</p>
+
+<p>int copy(const char <em>path, void </em>context);
+void getFilename(char <em>filename, const char </em>path);
+void getFilenameWithPath(char <em>filename_with_path, char </em>filename);</p>
+
+<p>int main(void) {
+    assert_ndless_rev(801);
+    nio_console csl;
+    nio_init(&amp;csl, NIO_MAX_COLS, NIO_MAX_ROWS, 0, 0, BLACK, WHITE, TRUE);
+    nio_set_default(&amp;csl);
+    //新建文件夹
+    mkdir(&ldquo;/extension&rdquo;, 0777);
+    mkdir(&ldquo;/extension/dict_zh_CN&rdquo;, 0777);
+    //复制 dict 目录下所有文件到 /extension/dict_zh_CN/
+    int (<em>callback)(const char </em>path, void *context);
+    callback=copy;
+    file_each(&ldquo;/documents/dict&rdquo;, callback, NULL);</p>
+
+<pre><code>nio_printf("Done, press any key to exit.");
+wait_key_pressed();
+nio_free(&amp;csl);
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>int copy(const char <em>path, void </em>context) {
+    nio_printf(&ldquo;%s -> &rdquo;, path);
+    //取得完整路径
+    char <em>filename = new char[30];
+    char </em>filename_with_path = new char[70];
+    getFilename(filename, path);
+    getFilenameWithPath(filename_with_path, filename);
+    delete filename;
+    //打开对应文件
+    FILE <em>src, </em>dst;
+    if((src = fopen(path, &ldquo;rt&rdquo;)) == NULL || (dst = fopen(filename_with_path, &ldquo;wt&rdquo;)) == NULL) {
+        nio_printf(&ldquo;Failed to open file\n&rdquo;);
+        wait_key_pressed();
+        return 0;
+    }
+    //复制文件
+    int ch;
+    while ((ch = fgetc(src)) != EOF) {
+        fputc(ch, dst);
+    }</p>
+
+<pre><code>nio_printf("%s\n", filename_with_path);
+delete filename_with_path;
+fclose(src);
+fclose(dst);
+return 0;
+</code></pre>
+
+<p>}
+//取得文件名，顺便去掉文件名后面的 .tns
+void getFilename(char <em>filename, const char </em>path) {
+    while (<em>path) path++;
+    while (</em>path != &lsquo;/&rsquo;) path&ndash;;
+    path++;
+    while ((<em>filename++ = </em>path++));
+    filename -= 5;
+    <em>filename = &lsquo;\0&rsquo;;
+}
+//取得目标路径完整路径名
+void getFilenameWithPath(char </em>filename_with_path, char *filename) {
+    strcpy(filename_with_path, &ldquo;/extension/dict_zh_CN/&rdquo;);
+    strcat(filename_with_path, filename);
+}</p>
+
+<p>```
+考虑到 Nspire 只能传输 .tns 文件。所以必须在传入之前加上这个后缀，复制的时候再把它处理掉。  <br/>
+把从 ZiDian.tcc 中得到的所有文件加个 .tns 后缀，放到 我的文档 下面的 dict 文件夹，然后运行一下这个程序，效果相当不错！  <br/>
+<img src="/images/20160116/3-1.png" alt="" />  <br/>
+重启一下，字典就可以用了。  <br/>
+<img src="/images/20160116/5-1.png" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ndless 学习笔记]]></title>
+    <link href="http://www.caoyue.com.cn/blog/2016/01/10/Ndless-Note/"/>
+    <updated>2016-01-10T10:31:28+08:00</updated>
+    <id>http://www.caoyue.com.cn/blog/2016/01/10/Ndless-Note</id>
+    <content type="html"><![CDATA[<p>近来学习 Ndless 写的笔记，由于 <a href="http://hackspire.unsads.com/">HackSpire</a> 一直处于崩掉状态， TI-Nspire API 什么的都无法查看，只能慢慢摸索，于是就写了这个，放到 GitHub 上，以后就当文档看好了。  <br/>
+<a href="https://github.com/haruue/NdlessNote">https://github.com/haruue/NdlessNote</a></p>
+
+<!--more-->
+
+
+<h6>目录</h6>
+
+<table>
+<thead>
+<tr>
+<th>   日期   </th>
+<th>                   主题                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 20160104 </td>
+<td> 语言支持 与 Nspire 标准输入框           </td>
+</tr>
+<tr>
+<td> 20160105 </td>
+<td> 命令行程序<code>nspireio.h</code> 与 按键扫描      </td>
+</tr>
+<tr>
+<td> 20160106 </td>
+<td> 文件操作 与 流操作                      </td>
+</tr>
+<tr>
+<td> 20160107 </td>
+<td> LCD操作 与 <code>nGC</code>构建图形化界面          </td>
+</tr>
+<tr>
+<td> 20160108 </td>
+<td> 在<code>nGC</code>中使用原生中文支持               </td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+</feed>

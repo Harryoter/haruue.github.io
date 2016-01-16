@@ -9,8 +9,7 @@
   <meta name="author" content="春上冰月">
 
   
-  <meta name="description" content="其实这篇文章没有什么技术含量的。。。用的工具、文件什么的差不多都是现成的。。。
-写这篇文章的纯粹目的，只是因为网上几乎没有这部手机相关的东西，放一个作为一个备忘，顺便为以后破解国产机提供一种思路。 首先说一下这部机子的来历：我们学校的电信宽带是办宽带赠(kun)送(bang)手机的， &hellip;">
+  <meta name="description" content="最近有人发现，将 TI-Nspire CX CAS 升级到 OS 4.0.3.29 之后出现了无法安装字典的问题，我在 firebird 上使用字典安装程序，然后发现这实际上是防降级机制的问题。 因为 OS 4.0 实际上有两个版本，官网上直接下载到的是 OS 4.0.3.29 ， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +77,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way/">在 TI-Nspire CX-C CAS 上直接安装字典方法的研究</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+ Jan 16, 2016
+        
+        
+         | <a href="/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way/#comments">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近有人发现，将 TI-Nspire CX CAS 升级到 OS 4.0.3.29 之后出现了无法安装字典的问题，我在 firebird 上使用字典安装程序，然后发现这实际上是防降级机制的问题。  <br/>
+因为 OS 4.0 实际上有两个版本，官网上直接下载到的是 OS 4.0.3.29 ，而教师软件里自带的是 OS 4.0.0.235 。而教师软件自带了一个版本号是 4.0.0.500 的 ZiDian.tcc ，因此在 4.0.3.29 上直接安装这个 ZiDian.tcc 会触发防降级机制，并不会被安装。  <br/>
+我在 firebird 里安装了一个 OS 4.0.0.235 ，然后在里面安装了字典，然后我发现安装过程中会有这样的输出。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/01/10/Ndless-Note/">Ndless 学习笔记</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+ Jan 10, 2016
+        
+        
+         | <a href="/blog/2016/01/10/Ndless-Note/#comments">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>近来学习 Ndless 写的笔记，由于 <a href="http://hackspire.unsads.com/">HackSpire</a> 一直处于崩掉状态， TI-Nspire API 什么的都无法查看，只能慢慢摸索，于是就写了这个，放到 GitHub 上，以后就当文档看好了。  <br/>
+<a href="https://github.com/haruue/NdlessNote">https://github.com/haruue/NdlessNote</a></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/01/10/Ndless-Note/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -247,7 +331,7 @@
 
   <div class="entry-content"><p>Hello World!<br />
 此乃开博第一文也！<br />
-折腾了一整天，终于在 Openshift 上（<del>本来就不是让你放在这里的</del>）开了这个 Octopress 。人家本来说的就是“A blogging framework for hackers”，看来自己距离 hacker 的那种级别还有相当遥远的距离。<br />
+折腾了一整天，终于在 Openshift 上<del>（本来就不是让你放在这里的）</del>开了这个 Octopress 。人家本来说的就是“A blogging framework for hackers”，看来自己距离 hacker 的那种级别还有相当遥远的距离。<br />
 忙活了一整年，在不得消停的压力中熬完高三，在艰险与激情中搞定高考，然后就是在忐忑不安中知晓成绩，挑选专业和大学。。。<br />
 终于，我获得了大约 2 个月的时间可以做自己想做的事，研究自己喜欢的东西。<br />
 似乎，忽然间就自由了呢。。。<br />
@@ -300,6 +384,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/16/Install-Dict-on-CX-C-with-a-straightly-way/">在 TI-Nspire CX-C CAS 上直接安装字典方法的研究</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/10/Ndless-Note/">Ndless 学习笔记</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/">Coolpad 5261 的 Root 与刷机方法</a>
       </li>
     
@@ -309,10 +401,6 @@
     
       <li class="post">
         <a href="/blog/2015/07/16/strlib2-ji-yu-ti-basicde-zi-fu-chuan-han-shu-ku/">Strlib2: 基于TI-BASIC的字符串函数库</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/30/hello-world/">Hello World</a>
       </li>
     
   </ul>
