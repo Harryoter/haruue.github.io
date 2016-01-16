@@ -163,7 +163,7 @@
 <p>原来字典安装字典的主要过程就是解压+复制+验证的过程，如果把 ZiDian.tcc 以 zip 解压，我们会得到一个 os_ext.img 再解压它，得到的恰好就是这些文件，那就简单了。把这些文件直接复制到对应文件夹里试试。  <br/>
 于是我写了个简单的 Ndless 程序<del>（好吧其实是拿以前写的复制文件代码随便改改出来的）</del>，来完成这个复制操作</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -233,85 +233,84 @@
 <span class='line-number'>68</span>
 <span class='line-number'>69</span>
 <span class='line-number'>70</span>
-<span class='line-number'>71</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;libndls.h&gt;
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="cp">#include &lt;libndls.h&gt;</span>
 </span><span class='line'>
-</span><span class='line'>extern "C" {
-</span><span class='line'>    #include &lt;nspireio/nspireio.h&gt;
-</span><span class='line'>}
+</span><span class='line'><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+</span><span class='line'>    <span class="cp">#include &lt;nspireio/nspireio.h&gt;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int copy(const char *path, void *context); 
-</span><span class='line'>void getFilename(char *filename, const char *path);
-</span><span class='line'>void getFilenameWithPath(char *filename_with_path, char *filename);
+</span><span class='line'><span class="kt">int</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">getFilename</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">);</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">getFilenameWithPath</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>int main(void) {
-</span><span class='line'>    assert_ndless_rev(801);
-</span><span class='line'>    nio_console csl;
-</span><span class='line'>    nio_init(&csl, NIO_MAX_COLS, NIO_MAX_ROWS, 0, 0, BLACK, WHITE, TRUE);
-</span><span class='line'>    nio_set_default(&csl);
-</span><span class='line'>    //新建文件夹
-</span><span class='line'>    mkdir("/extension", 0777);
-</span><span class='line'>    mkdir("/extension/dict_zh_CN", 0777);
-</span><span class='line'>    //复制 dict 目录下所有文件到 /extension/dict_zh_CN/
-</span><span class='line'>    int (*callback)(const char *path, void *context); 
-</span><span class='line'>    callback=copy;
-</span><span class='line'>    file_each("/documents/dict", callback, NULL);
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">assert_ndless_rev</span><span class="p">(</span><span class="mi">801</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">nio_console</span> <span class="n">csl</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">nio_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">csl</span><span class="p">,</span> <span class="n">NIO_MAX_COLS</span><span class="p">,</span> <span class="n">NIO_MAX_ROWS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">nio_set_default</span><span class="p">(</span><span class="o">&amp;</span><span class="n">csl</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//新建文件夹</span>
+</span><span class='line'>    <span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;/extension&quot;</span><span class="p">,</span> <span class="mo">0777</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;/extension/dict_zh_CN&quot;</span><span class="p">,</span> <span class="mo">0777</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//复制 dict 目录下所有文件到 /extension/dict_zh_CN/</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">callback</span><span class="o">=</span><span class="n">copy</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">file_each</span><span class="p">(</span><span class="s">&quot;/documents/dict&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>    nio_printf("Done, press any key to exit.");
-</span><span class='line'>    wait_key_pressed();
-</span><span class='line'>    nio_free(&csl);
-</span><span class='line'>    return 0;
-</span><span class='line'>}
+</span><span class='line'>    <span class="n">nio_printf</span><span class="p">(</span><span class="s">&quot;Done, press any key to exit.&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">wait_key_pressed</span><span class="p">();</span>
+</span><span class='line'>    <span class="n">nio_free</span><span class="p">(</span><span class="o">&amp;</span><span class="n">csl</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int copy(const char *path, void *context) {
-</span><span class='line'>    nio_printf("%s -&gt; ", path);
-</span><span class='line'>    //取得完整路径
-</span><span class='line'>    char *filename = new char[30];
-</span><span class='line'>    char *filename_with_path = new char[70];
-</span><span class='line'>    getFilename(filename, path);
-</span><span class='line'>    getFilenameWithPath(filename_with_path, filename);
-</span><span class='line'>    delete filename;
-</span><span class='line'>    //打开对应文件
-</span><span class='line'>    FILE *src, *dst;
-</span><span class='line'>    if((src = fopen(path, "rt")) == NULL || (dst = fopen(filename_with_path, "wt")) == NULL) {
-</span><span class='line'>        nio_printf("Failed to open file\n");
-</span><span class='line'>        wait_key_pressed();
-</span><span class='line'>        return 0;
-</span><span class='line'>    }
-</span><span class='line'>    //复制文件
-</span><span class='line'>    int ch;
-</span><span class='line'>    while ((ch = fgetc(src)) != EOF) {
-</span><span class='line'>        fputc(ch, dst);
-</span><span class='line'>    }
+</span><span class='line'><span class="kt">int</span> <span class="nf">copy</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">nio_printf</span><span class="p">(</span><span class="s">&quot;%s -&gt; &quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//取得完整路径</span>
+</span><span class='line'>    <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+</span><span class='line'>    <span class="kt">char</span> <span class="o">*</span><span class="n">filename_with_path</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">70</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">getFilename</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">getFilenameWithPath</span><span class="p">(</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">delete</span> <span class="n">filename</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//打开对应文件</span>
+</span><span class='line'>    <span class="kt">FILE</span> <span class="o">*</span><span class="n">src</span><span class="p">,</span> <span class="o">*</span><span class="n">dst</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">((</span><span class="n">src</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&quot;rt&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">||</span> <span class="p">(</span><span class="n">dst</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="s">&quot;wt&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">nio_printf</span><span class="p">(</span><span class="s">&quot;Failed to open file</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">wait_key_pressed</span><span class="p">();</span>
+</span><span class='line'>        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">//复制文件</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">ch</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">src</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">fputc</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">dst</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>    nio_printf("%s\n", filename_with_path);
-</span><span class='line'>    delete filename_with_path;
-</span><span class='line'>    fclose(src);
-</span><span class='line'>    fclose(dst);
-</span><span class='line'>    return 0;
-</span><span class='line'>}
-</span><span class='line'>//取得文件名，顺便去掉文件名后面的 .tns
-</span><span class='line'>void getFilename(char *filename, const char *path) {
-</span><span class='line'>    while (*path) path++;
-</span><span class='line'>    while (*path != '/') path--;
-</span><span class='line'>    path++;
-</span><span class='line'>    while ((*filename++ = *path++));
-</span><span class='line'>    filename -= 5;
-</span><span class='line'>    *filename = '\0';
-</span><span class='line'>}
-</span><span class='line'>//取得目标路径完整路径名
-</span><span class='line'>void getFilenameWithPath(char *filename_with_path, char *filename) {
-</span><span class='line'>    strcpy(filename_with_path, "/extension/dict_zh_CN/");
-</span><span class='line'>    strcat(filename_with_path, filename);
-</span><span class='line'>}
-</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>    <span class="n">nio_printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">filename_with_path</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">delete</span> <span class="n">filename_with_path</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">fclose</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">fclose</span><span class="p">(</span><span class="n">dst</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1">//取得文件名，顺便去掉文件名后面的 .tns</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">getFilename</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">path</span><span class="p">)</span> <span class="n">path</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">path</span> <span class="o">!=</span> <span class="sc">&#39;/&#39;</span><span class="p">)</span> <span class="n">path</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">path</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">((</span><span class="o">*</span><span class="n">filename</span><span class="o">++</span> <span class="o">=</span> <span class="o">*</span><span class="n">path</span><span class="o">++</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">filename</span> <span class="o">-=</span> <span class="mi">5</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">*</span><span class="n">filename</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1">//取得目标路径完整路径名</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">getFilenameWithPath</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">strcpy</span><span class="p">(</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="s">&quot;/extension/dict_zh_CN/&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">strcat</span><span class="p">(</span><span class="n">filename_with_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>考虑到 Nspire 只能传输 .tns 文件。所以必须在传入之前加上这个后缀，复制的时候再把它处理掉。  <br/>
 把从 ZiDian.tcc 中得到的所有文件加个 .tns 后缀，放到 我的文档 下面的 dict 文件夹，然后运行一下这个程序，效果相当不错！  <br/>
-<img src="/images/20160116/3-1.png" alt="" />  <br/>
+<img src="/images/blog/20160116/3-1.png" alt="" />  <br/>
 重启一下，字典就可以用了。  <br/>
-<img src="/images/20160116/5-1.png" alt="" /></p>
+<img src="/images/blog/20160116/5-1.png" alt="" /></p>
 </div>
 
 
