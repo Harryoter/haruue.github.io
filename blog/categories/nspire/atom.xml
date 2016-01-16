@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nspire | 春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/blog/categories/nspire/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-01-16T21:43:14+08:00</updated>
+  <updated>2016-01-16T21:53:38+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -52,7 +52,7 @@ OS_EXT: Install Complete(0x0000).
 
 <p>原来字典安装字典的主要过程就是解压+复制+验证的过程，如果把 ZiDian.tcc 以 zip 解压，我们会得到一个 os_ext.img 再解压它，得到的恰好就是这些文件，那就简单了。把这些文件直接复制到对应文件夹里试试。  <br/>
 于是我写了个简单的 Ndless 程序<del>（好吧其实是拿以前写的复制文件代码随便改改出来的）</del>，来完成这个复制操作  <br/>
-```</p>
+``` C++</p>
 
 <h1>include &lt;libndls.h></h1>
 
@@ -132,9 +132,9 @@ void getFilenameWithPath(char </em>filename_with_path, char *filename) {
 <p>```
 考虑到 Nspire 只能传输 .tns 文件。所以必须在传入之前加上这个后缀，复制的时候再把它处理掉。  <br/>
 把从 ZiDian.tcc 中得到的所有文件加个 .tns 后缀，放到 我的文档 下面的 dict 文件夹，然后运行一下这个程序，效果相当不错！  <br/>
-<img src="/images/20160116/3-1.png" alt="" />  <br/>
+<img src="/images/blog/20160116/3-1.png" alt="" />  <br/>
 重启一下，字典就可以用了。  <br/>
-<img src="/images/20160116/5-1.png" alt="" /></p>
+<img src="/images/blog/20160116/5-1.png" alt="" /></p>
 ]]></content>
   </entry>
   
@@ -149,7 +149,7 @@ void getFilenameWithPath(char </em>filename_with_path, char *filename) {
 <!--more-->
 
 
-<h6>目录</h6>
+<h3>目录</h3>
 
 <table>
 <thead>
