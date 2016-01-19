@@ -4,7 +4,7 @@
   <title><![CDATA[春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-01-19T18:27:37+08:00</updated>
+  <updated>2016-01-19T21:59:19+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HackSpire 镜像站的镜像站现在已经开放]]></title>
+    <link href="http://www.caoyue.com.cn/blog/2016/01/19/HackSpire-image-site/"/>
+    <updated>2016-01-19T21:40:36+08:00</updated>
+    <id>http://www.caoyue.com.cn/blog/2016/01/19/HackSpire-image-site</id>
+    <content type="html"><![CDATA[<p><a href="http://hackspire.unsads.com/wiki/index.php/Main_Page">HackSpire</a> 一直处于挂掉的状态，这使得很多 Nspire 的资料无法搜寻。今天 MetroStyle 突然发现了 archive.org 上缓存过 HackSpire 的镜像，但是要使用<del>科学的上网方式</del>才能访问而且速度很慢确实也不太方便。于是就在自己的阿里云服务器上弄了一个。</p>
+
+<p>实际上就是查看镜像站的源代码界面然后直接贴到一个空白的 MediaWiki 上。</p>
+
+<p><a href="http://120.27.113.124/HackSpire/index.php">http://120.27.113.124/HackSpire/index.php</a></p>
+
+<p><del>好歹能看吧</del>。。。</p>
+
+<p>另外，由于有些源代码页面并没有被 archive.org 缓存，因此还有一些页面没有搬运好，预计等过几天有时间了再来搬运吧。。。<del>（估计又得坑掉</del></p>
+
+<p>另外，如果你愿意帮助我们搬运的话，那是极好的。。。  <br/>
+archive.org 上缓存的 HackSpire 主页地址 <a href="https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page">https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在 TI-Nspire CX-C CAS 上直接安装字典方法的研究]]></title>
@@ -430,7 +450,7 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
 美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
 另外，对手机的支持也是一个问题。。。<br />
 <br />
-如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#104;&#x61;&#x72;&#x75;&#x75;&#x65;&#64;&#x63;&#97;&#x6f;&#x79;&#x75;&#101;&#46;&#99;&#111;&#109;&#x2e;&#99;&#x6e;">&#104;&#97;&#114;&#x75;&#x75;&#x65;&#x40;&#x63;&#x61;&#111;&#121;&#117;&#x65;&#x2e;&#x63;&#111;&#109;&#46;&#99;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x68;&#x61;&#114;&#x75;&#x75;&#101;&#x40;&#x63;&#97;&#111;&#121;&#x75;&#x65;&#46;&#99;&#111;&#x6d;&#46;&#99;&#x6e;">&#104;&#x61;&#x72;&#x75;&#117;&#x65;&#64;&#x63;&#x61;&#111;&#x79;&#117;&#x65;&#46;&#x63;&#111;&#109;&#46;&#99;&#110;</a></code>，我们将把一封样件发给您。<br /></p>
 ]]></content>
   </entry>
   
