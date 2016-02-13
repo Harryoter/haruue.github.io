@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | 春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-01-22T15:24:58+08:00</updated>
+  <updated>2016-02-13T13:57:05+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用 retrofit2 上传文件的方法]]></title>
+    <link href="http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/"/>
+    <updated>2016-02-12T23:34:48+08:00</updated>
+    <id>http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2</id>
+    <content type="html"><![CDATA[<p>被坑了两天。。感觉这个必须得记下了。。。</p>
+
+<p>使用 retrofit2 上传一张图到服务器，服务器上使用这样的 php 语句来获取文件  <br/>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$file = $_FILES[&lsquo;image&rsquo;];&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;&lt;code&gt;``
+</span><span class='line'>ApiService 按照官方的文档使用&lt;/code&gt;Multipart`就好，用不用 PartMap 就看喜好了&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!--More--&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code class="Java"&gt;@Multipart
+</span><span class='line'>@POST("uploadImage.php")
+</span><span class='line'>Call&lt;UploadInformationTransfer&gt; uploadImage(@PartMap Map&lt;String, RequestBody&gt; params);
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;所有的参数都要用&lt;code&gt;RequestBody&lt;/code&gt;包装一下  &lt;br/&gt;</span></code></pre></td></tr></table></div></figure> Java
+// 传入的纯文本 POST 参数，使用 $_POST[&lsquo;field&rsquo;] 来获取
+RequestBody apikey = RequestBody.create(MediaType.parse(&ldquo;text/plain&rdquo;), ApiKeys.HARUUE_STORAGE_SERVER_2_APIKEY);
+RequestBody use = RequestBody.create(MediaType.parse(&ldquo;text/plain&rdquo;), &ldquo;face&rdquo;);</p>
+
+<p>// 传入的文件参数，使用 $_FILES[&lsquo;field&rsquo;] 来获取
+RequestBody imgFile = RequestBody.create(MediaType.parse(&ldquo;image/jpeg&rdquo;), file);</p>
+
+<pre><code>然后把它们加入 PartMap ，如果不使用 PartMap ，把对应部分填到 @Part("field") 里去也可以    
+</code></pre>
+
+<p>Map&lt;String, RequestBody> partMap = new HashMap&lt;>();
+partMap.put(&ldquo;apikey&rdquo;, apikey);
+partMap.put(&ldquo;use&rdquo;, use);
+partMap.put(&ldquo;image\&rdquo;; filename=\&ldquo;upload.jpg\&rdquo;&ldquo;, imgFile);</p>
+
+<pre><code>然后把这个 partMap 传入对应函数中，大功告成。。。    
+
+&lt;del&gt;看起来很简单就像是 FormUrlEncoded 一样，然而，发现坑没有？&lt;/del&gt;    
+
+__注意：__在传入文件的时候，使用    
+</code></pre>
+
+<p>partMap.put(&ldquo;image\&rdquo;; filename=\&ldquo;upload.jpg\&rdquo;&ldquo;, imgFile);</p>
+
+<pre><code>实际上，上传的文件名与系统中存储的文件的真实文件名没有关系，只与这个字符串有关系。。。    
+所以，如果需要在服务器上使用`$_FILES['参数名']`来获取上传的文件，那么上传的时候就应该写    
+</code></pre>
+
+<p>// 使用 PartMap
+partMap.put(&ldquo;参数名\&rdquo;; filename=\&ldquo;文件名\&rdquo;&ldquo;, imgFile);</p>
+
+<p>// 直接在定义 ApiService 时使用 @Part 注释
+Call&lt;&hellip;> upload(&hellip;, @Part(&ldquo;参数名\&rdquo;; filename=\&ldquo;文件名\&rdquo;&ldquo;) RequestBody file, &hellip;);</p>
+
+<pre><code>因此，如果需要文件名可变，那么就必须使用 PartMap 
+</code></pre>
+
+<p>partMap.put(&ldquo;参数名\&rdquo;; filename=\&ldquo;&rdquo; + filename + &ldquo;\&rdquo;&ldquo;, imgFile);</p>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coolpad 5261 的 root 与刷机方法]]></title>

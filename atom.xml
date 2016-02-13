@@ -4,7 +4,7 @@
   <title><![CDATA[春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-01-22T15:24:58+08:00</updated>
+  <updated>2016-02-13T13:57:05+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用 retrofit2 上传文件的方法]]></title>
+    <link href="http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/"/>
+    <updated>2016-02-12T23:34:48+08:00</updated>
+    <id>http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2</id>
+    <content type="html"><![CDATA[<p>被坑了两天。。感觉这个必须得记下了。。。</p>
+
+<p>使用 retrofit2 上传一张图到服务器，服务器上使用这样的 php 语句来获取文件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$file = $_FILES['image'];
+</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>ApiService 按照官方的文档使用<code>Multipart</code>就好，用不用 PartMap 就看喜好了</p>
+
+<!--More-->
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="nd">@Multipart</span>
+</span><span class='line'><span class="nd">@POST</span><span class="o">(</span><span class="s">&quot;uploadImage.php&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="n">Call</span><span class="o">&lt;</span><span class="n">UploadInformationTransfer</span><span class="o">&gt;</span> <span class="nf">uploadImage</span><span class="o">(</span><span class="nd">@PartMap</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RequestBody</span><span class="o">&gt;</span> <span class="n">params</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所有的参数都要用<code>RequestBody</code>包装一下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="c1">// 传入的纯文本 POST 参数，使用 $_POST[&#39;field&#39;] 来获取</span>
+</span><span class='line'><span class="n">RequestBody</span> <span class="n">apikey</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&quot;text/plain&quot;</span><span class="o">),</span> <span class="n">ApiKeys</span><span class="o">.</span><span class="na">HARUUE_STORAGE_SERVER_2_APIKEY</span><span class="o">);</span>
+</span><span class='line'><span class="n">RequestBody</span> <span class="n">use</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&quot;text/plain&quot;</span><span class="o">),</span> <span class="s">&quot;face&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 传入的文件参数，使用 $_FILES[&#39;field&#39;] 来获取</span>
+</span><span class='line'><span class="n">RequestBody</span> <span class="n">imgFile</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&quot;image/jpeg&quot;</span><span class="o">),</span> <span class="n">file</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后把它们加入 PartMap ，如果不使用 PartMap ，把对应部分填到 @Part(&ldquo;field&rdquo;) 里去也可以</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RequestBody</span><span class="o">&gt;</span> <span class="n">partMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;apikey&quot;</span><span class="o">,</span> <span class="n">apikey</span><span class="o">);</span>
+</span><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;use&quot;</span><span class="o">,</span> <span class="n">use</span><span class="o">);</span>
+</span><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;image\&quot;; filename=\&quot;upload.jpg\&quot;&quot;</span><span class="o">,</span> <span class="n">imgFile</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后把这个 partMap 传入对应函数中，大功告成。。。</p>
+
+<p><del>看起来很简单就像是 FormUrlEncoded 一样，然而，发现坑没有？</del></p>
+
+<p><strong>注意：</strong>在传入文件的时候，使用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;image\&quot;; filename=\&quot;upload.jpg\&quot;&quot;</span><span class="o">,</span> <span class="n">imgFile</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>实际上，上传的文件名与系统中存储的文件的真实文件名没有关系，只与这个字符串有关系。。。  <br/>
+所以，如果需要在服务器上使用<code>$_FILES['参数名']</code>来获取上传的文件，那么上传的时候就应该写</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="c1">// 使用 PartMap </span>
+</span><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;参数名\&quot;; filename=\&quot;文件名\&quot;&quot;</span><span class="o">,</span> <span class="n">imgFile</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 直接在定义 ApiService 时使用 @Part 注释</span>
+</span><span class='line'><span class="n">Call</span><span class="o">&lt;...&gt;</span> <span class="nf">upload</span><span class="o">(...,</span> <span class="nd">@Part</span><span class="o">(</span><span class="s">&quot;参数名\&quot;; filename=\&quot;文件名\&quot;&quot;</span><span class="o">)</span> <span class="n">RequestBody</span> <span class="n">file</span><span class="o">,</span> <span class="o">...);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因此，如果需要文件名可变，那么就必须使用 PartMap</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Java'><span class='line'><span class="n">partMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;参数名\&quot;; filename=\&quot;&quot;</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s">&quot;\&quot;&quot;</span><span class="o">,</span> <span class="n">imgFile</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HackSpire 镜像站的镜像站现在已经开放]]></title>
@@ -450,7 +545,7 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
 美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
 另外，对手机的支持也是一个问题。。。<br />
 <br />
-如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#104;&#x61;&#114;&#117;&#117;&#101;&#x40;&#99;&#97;&#111;&#121;&#x75;&#x65;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;&#99;&#x6e;">&#104;&#97;&#114;&#x75;&#117;&#101;&#64;&#99;&#x61;&#111;&#121;&#x75;&#101;&#46;&#x63;&#111;&#109;&#46;&#99;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x68;&#x61;&#x72;&#117;&#x75;&#x65;&#x40;&#x63;&#x61;&#111;&#x79;&#117;&#101;&#x2e;&#x63;&#111;&#109;&#x2e;&#x63;&#110;">&#x68;&#97;&#114;&#117;&#117;&#101;&#x40;&#99;&#x61;&#x6f;&#121;&#117;&#101;&#x2e;&#99;&#111;&#109;&#x2e;&#x63;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
 ]]></content>
   </entry>
   

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/</loc>
+    <lastmod>2016-02-12T23:34:48+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://www.caoyue.com.cn/blog/2016/01/19/HackSpire-image-site/</loc>
     <lastmod>2016-01-19T21:40:36+08:00</lastmod>
   </url>

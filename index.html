@@ -9,7 +9,9 @@
   <meta name="author" content="春上冰月">
 
   
-  <meta name="description" content="HackSpire 一直处于挂掉的状态，这使得很多 Nspire 的资料无法搜寻。今天 MetroStyle 突然发现了 archive.org 上缓存过 HackSpire 的镜像，但是要使用科学的上网方式才能访问而且速度很慢确实也不太方便。于是就在自己的阿里云服务器上弄了一个。 &hellip;">
+  <meta name="description" content="被坑了两天。。感觉这个必须得记下了。。。 使用 retrofit2 上传一张图到服务器，服务器上使用这样的 php 语句来获取文件 1
+2
+$file = $_FILES['image']; ApiService 按照官方的文档使用Multipart就好，用不用 PartMap 就看喜好了 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +79,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/02/12/How-to-upload-file-with-retrofit2/">使用 Retrofit2 上传文件的方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+ Feb 12, 2016
+        
+        
+         | <a href="/blog/2016/02/12/How-to-upload-file-with-retrofit2/#comments">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>被坑了两天。。感觉这个必须得记下了。。。</p>
+
+<p>使用 retrofit2 上传一张图到服务器，服务器上使用这样的 php 语句来获取文件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$file = $_FILES['image'];
+</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>ApiService 按照官方的文档使用<code>Multipart</code>就好，用不用 PartMap 就看喜好了</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/02/12/How-to-upload-file-with-retrofit2/">阅读更多 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -443,6 +496,10 @@ archive.org 上缓存的 HackSpire 主页地址 <a href="https://web.archive.org
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/12/How-to-upload-file-with-retrofit2/">使用 Retrofit2 上传文件的方法</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/19/HackSpire-image-site/">HackSpire 镜像站的镜像站现在已经开放</a>
       </li>
     
@@ -456,10 +513,6 @@ archive.org 上缓存的 HackSpire 主页地址 <a href="https://web.archive.org
     
       <li class="post">
         <a href="/blog/2015/09/17/coolpad-5261-de-root-yu-shua-ji-fang-fa/">Coolpad 5261 的 Root 与刷机方法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/29/wo-yao-rang-wo-de-email-xiang-octopress-yi-yang-piao-liang/">我要让我的 Email 像 Octopress 一样漂亮</a>
       </li>
     
   </ul>
