@@ -4,7 +4,7 @@
   <title><![CDATA[春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-02-17T15:17:23+08:00</updated>
+  <updated>2016-03-12T19:02:36+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -117,14 +117,11 @@
 
 <p>实际上就是查看镜像站的源代码界面然后直接贴到一个空白的 MediaWiki 上。</p>
 
-<p><a href="http://120.27.113.124/HackSpire/index.php">http://120.27.113.124/HackSpire/index.php</a></p>
+<p><a href="http://hackspire.caoyue.com.cn">http://hackspire.caoyue.com.cn</a></p>
 
 <p><del>好歹能看吧</del>。。。</p>
 
-<p>另外，由于有些源代码页面并没有被 archive.org 缓存，因此还有一些页面没有搬运好，预计等过几天有时间了再来搬运吧。。。<del>（估计又得坑掉</del></p>
-
-<p>另外，如果你愿意帮助我们搬运的话，那是极好的。。。  <br/>
-archive.org 上缓存的 HackSpire 主页地址 <a href="https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page">https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page</a></p>
+<p>再次感谢 MetroStyle ，他提供的站点导出文件使得当前的 HackSpire 镜像站十分完整了。</p>
 ]]></content>
   </entry>
   
@@ -545,7 +542,7 @@ ROM助手 自带 img 合并拆分，那就先合并掉，然后用自带的编�
 美中不足的是：由于用的样式比较复杂，十分符合垃圾邮件的特征，于是。。。<br />
 另外，对手机的支持也是一个问题。。。<br />
 <br />
-如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x68;&#97;&#114;&#117;&#x75;&#101;&#64;&#x63;&#x61;&#111;&#121;&#117;&#x65;&#46;&#99;&#x6f;&#x6d;&#x2e;&#99;&#110;">&#x68;&#97;&#x72;&#x75;&#x75;&#x65;&#64;&#x63;&#x61;&#x6f;&#x79;&#117;&#x65;&#46;&#x63;&#x6f;&#109;&#x2e;&#99;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
+如果您对这个项目感兴趣，欢迎发送一封主题中包含<code>reply-code=emailproject_2ds4k2m2k3</code>的邮件到<code><a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#104;&#97;&#x72;&#117;&#x75;&#101;&#64;&#x63;&#97;&#x6f;&#121;&#117;&#101;&#x2e;&#99;&#111;&#x6d;&#46;&#x63;&#110;">&#x68;&#97;&#114;&#117;&#x75;&#101;&#x40;&#x63;&#97;&#111;&#121;&#x75;&#101;&#46;&#x63;&#x6f;&#109;&#46;&#99;&#x6e;</a></code>，我们将把一封样件发给您。<br /></p>
 ]]></content>
   </entry>
   

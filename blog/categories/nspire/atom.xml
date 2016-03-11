@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nspire | 春上冰月的博客]]></title>
   <link href="http://www.caoyue.com.cn/blog/categories/nspire/atom.xml" rel="self"/>
   <link href="http://www.caoyue.com.cn/"/>
-  <updated>2016-02-17T15:17:23+08:00</updated>
+  <updated>2016-03-12T19:02:36+08:00</updated>
   <id>http://www.caoyue.com.cn/</id>
   <author>
     <name><![CDATA[春上冰月]]></name>
@@ -22,14 +22,11 @@
 
 <p>实际上就是查看镜像站的源代码界面然后直接贴到一个空白的 MediaWiki 上。</p>
 
-<p><a href="http://120.27.113.124/HackSpire/index.php">http://120.27.113.124/HackSpire/index.php</a></p>
+<p><a href="http://hackspire.caoyue.com.cn">http://hackspire.caoyue.com.cn</a></p>
 
 <p><del>好歹能看吧</del>。。。</p>
 
-<p>另外，由于有些源代码页面并没有被 archive.org 缓存，因此还有一些页面没有搬运好，预计等过几天有时间了再来搬运吧。。。<del>（估计又得坑掉</del></p>
-
-<p>另外，如果你愿意帮助我们搬运的话，那是极好的。。。  <br/>
-archive.org 上缓存的 HackSpire 主页地址 <a href="https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page">https://web.archive.org/web/20150715054858/http://hackspire.unsads.com/wiki/index.php/Main_Page</a></p>
+<p>再次感谢 MetroStyle ，他提供的站点导出文件使得当前的 HackSpire 镜像站十分完整了。</p>
 ]]></content>
   </entry>
   
